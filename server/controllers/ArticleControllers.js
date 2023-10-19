@@ -1,4 +1,4 @@
-const { article } = require("../models");
+const { article,user } = require("../models");
 
 class ArticleControllers {
   static async getArticle(req, res) {
@@ -30,6 +30,22 @@ class ArticleControllers {
         const id = +req.params.id
         const result = await article.findByPk(id)
         res.json(result)
+    } catch (error) {
+        res.json(error)
+    }
+  }
+  static async createByUser(req, res) {
+    try {
+        const id = +req.params.id
+        const { title, content, posting,userId } = req.body;
+        const result = await user.findByPk(id)
+        const createArticles = await article.create({
+          title,
+        content,
+        posting,
+        userId : result.id,
+        })
+        res.json(createArticles)
     } catch (error) {
         res.json(error)
     }

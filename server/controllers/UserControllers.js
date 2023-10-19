@@ -41,7 +41,8 @@ class UserControllers {
           let access_token = tokenGenerator(emailFound);
           let username = emailFound.username;
           let image = emailFound.image
-          res.json({ access_token, username,image });
+          let id = emailFound.id
+          res.json({ access_token, username,image,id });
         } else {
           res.json({
             message: "wrong password",
