@@ -12,7 +12,6 @@ const Navbar = (props) => {
   }
 
   const [username, setUsername] = useState(null)
-
   useEffect(() => {
     setUsername(localStorage.getItem("username"))
   
@@ -39,17 +38,34 @@ const Navbar = (props) => {
           <li className="nav-item">
             <Link className="nav-link active" aria-current="page" to="/contact">Contact</Link>
           </li>
-          <li className="nav-item">
+          {loginStatus ? (
+            <>
+             <li className="nav-item">
             <Link className="nav-link active" aria-current="page" to="/posting">Posting</Link>
+            
           </li>
+           <li className="nav-item">
+          <p className='nav-link active'>Halo {username}</p>
+           
+         </li>
+            </>
+           
+          ) : (
+            null
+          )}
+          
 
         </ul>
         <form class="d-flex" role="search">
           {loginStatus ? (
             <a onClick={()=> logoutHanler()} href='#'class="btn btn-outline-success" type="submit">Logout</a>
           ) : (
+            <>
             <Link onClick={()=> loginHandler()} to='/login'class="btn btn-outline-success" type="submit">Login</Link>
-          )
+            <Link to='/register' class="btn btn-outline-success" type="submit">Register</Link>
+            </>
+            
+            )
           
           }
         

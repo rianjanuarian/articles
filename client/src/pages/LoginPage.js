@@ -9,7 +9,7 @@ const LoginPage = (props) => {
     window.location.href = "/";
   };
   const [form, setForm] = useState({
-    email: "",
+    username: "",
     password: "",
   });
   const dispatch = useDispatch();
@@ -34,13 +34,14 @@ const LoginPage = (props) => {
   return (
     <>
       <div className="container">
+        <h1>Login Page</h1>
         <form>
           <div className="mb-3">
             <label for="exampleInputEmail1" className="form-label">
-              Email address
+              Username
             </label>
             <input
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              onChange={(e) => setForm({ ...form, username: e.target.value })}
               type="email"
               className="form-control"
               id="exampleInputEmail1"

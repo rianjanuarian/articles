@@ -30,10 +30,10 @@ class UserControllers {
 
   static async login(req, res) {
     try {
-      const { email, password } = req.body;
+      const { username, password } = req.body;
       let emailFound = await user.findOne({
         where: {
-          email,
+          username,
         },
       });
       if (emailFound) {
