@@ -1,10 +1,12 @@
 const { decryptPwd } = require("../helpers/bcrypt");
 const { tokenGenerator } = require("../helpers/jsonwebtoken");
-const { user } = require("../models");
+const { user, article } = require("../models");
 class UserControllers {
   static async getUsers(req, res) {
     try {
-      const result = await user.findAll();
+      const result = await user.findAll({
+        include:[article]
+      });
       res.status(200).json(result);
     } catch (error) {
       res.status(500).json(error);

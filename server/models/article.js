@@ -11,12 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      article.belongsTo(models.user)
     }
   }
   article.init({
     title: DataTypes.STRING,
     content: DataTypes.STRING,
-    posting: DataTypes.INTEGER
+    posting: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
   }, {
     hooks: {
       beforeCreate: function(user,options){
