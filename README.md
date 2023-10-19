@@ -1,4 +1,4 @@
 # articles
 
-articles page using express and react redux
+articles website using express and react redux
 
