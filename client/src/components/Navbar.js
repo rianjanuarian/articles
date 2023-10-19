@@ -2,12 +2,15 @@ import React,{useEffect,useState} from 'react'
 import { Link } from "react-router-dom";
 const Navbar = (props) => {
   const {loginStatus,loginCbHandler} = props
-
+  const refresh = () => {
+    window.location.href = "/";
+  };
   const loginHandler = ()=>{
     loginCbHandler(true)
   }
   const logoutHanler = ()=>{
     localStorage.clear()
+    refresh()
     loginCbHandler(false)
   }
 
@@ -45,7 +48,7 @@ const Navbar = (props) => {
             
           </li>
            <li className="nav-item">
-          <p className='nav-link active'>Halo {username}</p>
+           <Link className="nav-link active" aria-current="page" to="/profile">{username}</Link>
            
          </li>
             </>

@@ -5,5 +5,6 @@ import HomePage from "./HomePage";
 import LoginPage from "./LoginPage";
 import HomeUser from "./HomeUser";
 import Register from "./Register";
+import ProfilePage from "./ProfilePage";
 
-export {About,Contact,Posting,HomePage,LoginPage,Register,HomeUser}
+export {About,Contact,Posting,HomePage,LoginPage,Register,HomeUser,ProfilePage}

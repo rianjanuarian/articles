@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Navbars } from "../components";
-import { About, Contact, Posting, HomePage,Register, LoginPage,HomeUser } from "../pages";
-import Navbar from "./Navbar";
+import { ProfilePage,About, Contact, Posting, HomePage,Register, LoginPage,HomeUser } from "../pages";
+
 const MainContent = () => {
   const [loginStatus, setLoginStatus] = useState(false);
   const loginCbHandler = (result) => {
@@ -39,6 +39,7 @@ const MainContent = () => {
         <Route path="/posting" element={<Posting></Posting>} />
         <Route path="/login" element={<LoginPage></LoginPage>} />
         <Route path="/register" element={<Register></Register>} />
+        <Route path="/profile" element={<ProfilePage></ProfilePage>} />
       </Routes>
     </>
   );
