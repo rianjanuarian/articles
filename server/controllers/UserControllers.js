@@ -5,7 +5,7 @@ class UserControllers {
   static async getUsers(req, res) {
     try {
       const result = await user.findAll({
-        include:[article]
+        include: [article],
       });
       res.status(200).json(result);
     } catch (error) {
@@ -40,9 +40,9 @@ class UserControllers {
         if (decryptPwd(password, emailFound.password)) {
           let access_token = tokenGenerator(emailFound);
           let username = emailFound.username;
-          let image = emailFound.image
-          let id = emailFound.id
-          res.json({ access_token, username,image,id });
+          let image = emailFound.image;
+          let id = emailFound.id;
+          res.json({ access_token, username, image, id });
         } else {
           res.json({
             message: "wrong password",
@@ -51,6 +51,17 @@ class UserControllers {
       } else {
         res.json({ message: "user not found" });
       }
+    } catch (error) {
+      res.json(error);
+    }
+  }
+  static async findUser(req, res) {
+    try {
+      const id = +req.params.id;
+      const result = await user.findByPk(id, {
+        include: [article],
+      });
+      res.json(result);
     } catch (error) {
       res.json(error);
     }

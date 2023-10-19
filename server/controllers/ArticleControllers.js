@@ -23,7 +23,17 @@ class ArticleControllers {
     }
   }
 
-  static async delete(req, res) {}
+  static async delete(req, res) {
+    try {
+      const id = +req.params.id;
+      let result = await article.destroy({
+        where: {id}
+      })
+      res.json({message:"delete success"})
+    } catch (error) {
+      res.json(error)
+    }
+  }
 
   static async getOneArticle(req, res) {
     try {
