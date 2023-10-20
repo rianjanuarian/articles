@@ -5,9 +5,11 @@ export const REGISTER_USER = "REGISTER_USER"
 
 
 export const loginUser = (datas) => {
+  
   return async (dispatch) => {
+    
     //loading
-    dispatch({
+    dispatch({ 
       type: LOGIN_USER,
       payload: {
         loading: true,
@@ -25,6 +27,8 @@ export const loginUser = (datas) => {
       const access_token = result.data.access_token;
       const id = result.data.id;
       const username = result.data.username;
+      const image = result.data.image
+      const email = result.data.email
       if (access_token === undefined) {
         dispatch({
           type: LOGIN_USER,
@@ -37,6 +41,8 @@ export const loginUser = (datas) => {
         localStorage.setItem("access_token", access_token);
         localStorage.setItem("id", id);
         localStorage.setItem("username", username);
+        localStorage.setItem("image", image);
+        localStorage.setItem("email", email);
         dispatch({
           type: LOGIN_USER,
           payload: {

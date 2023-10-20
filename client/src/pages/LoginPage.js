@@ -6,7 +6,7 @@ const LoginPage = (props) => {
   const { loginCbHandler } = props;
   const { loginResult } = useSelector((state) => state.users);
   const refresh = () => {
-    window.location.href = "/";
+    window.location.href = "/profile";
   };
   const [form, setForm] = useState({
     username: "",
@@ -16,6 +16,7 @@ const LoginPage = (props) => {
   const handleSubmit = () => {
 
     dispatch(loginUser(form));
+
   };
 
   useEffect(() => {
@@ -42,6 +43,7 @@ const LoginPage = (props) => {
             </label>
             <input
               onChange={(e) => setForm({ ...form, username: e.target.value })}
+              
               type="email"
               className="form-control"
               id="exampleInputEmail1"

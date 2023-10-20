@@ -42,7 +42,8 @@ class UserControllers {
           let username = emailFound.username;
           let image = emailFound.image;
           let id = emailFound.id;
-          res.json({ access_token, username, image, id });
+          let email = emailFound.email
+          res.json({ access_token, username, image, id ,email});
         } else {
           res.json({
             message: "wrong password",
@@ -60,6 +61,7 @@ class UserControllers {
       const id = +req.params.id;
       const result = await user.findByPk(id, {
         include: [article],
+        order: [['id', 'ASC']]
       });
       res.json(result);
     } catch (error) {
