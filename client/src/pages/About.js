@@ -3,7 +3,7 @@ import './index.css'
 const About = () => {
   return (
     <div>
-  
+  <h1>About Us</h1>
   <div class="container d-flex align-items-center">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 pt-5 text-light font-monospace lh-lg d-flex justify-content-between align-items-stretch align-items-md-start">
 
