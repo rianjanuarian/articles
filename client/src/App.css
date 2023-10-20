@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #4e5e6c;
+  }
+  .mx-auto.pb-5,
+  #accordionExample {
+    max-width: 90%;
+    margin: 0 auto;
+    --bs-accordion-border-radius: 0;
+    --bs-accordion-inner-border-radius: 0;
+  }
+  @media (min-width: 768px) {
+    .mx-auto.pb-5,
+    #accordionExample {
+      max-width: 500px;
+    }
+  }
+  .accordion-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5)!important;
+  }
+  .accordion-button {
+    background-color: #1c2938;
+    border: none!important;
+  }
+  .accordion-button::after {
+    display: none;
+  }
+  .accordion-button:focus {
+    z-index: 3;
+    border-color: none;
+    outline: 0;
+    box-shadow: none;
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: #1c2938;
+  }
+  .accordion-body {
+    background-color: #253447;
+  }

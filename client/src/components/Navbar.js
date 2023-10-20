@@ -24,7 +24,7 @@ const Navbar = (props) => {
   }, [username])
   
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style={{backgroundColor : "#2AAEB0"}}>
     <div className="container-fluid">
       <Link className="navbar-brand" onClick={()=>refresh()} to="/">Articles</Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,11 +61,12 @@ const Navbar = (props) => {
         </ul>
         <form class="d-flex" role="search">
           {loginStatus ? (
-            <a onClick={()=> logoutHanler()} href='#'class="btn btn-outline-success" type="submit">Logout</a>
+            <a onClick={()=> logoutHanler()} href='#'class="btn btn-dark" type="submit">Logout</a>
           ) : (
             <>
-            <Link onClick={()=> loginHandler()} to='/login'class="btn btn-outline-success" type="submit">Login</Link>
-            <Link to='/register' class="btn btn-outline-success" type="submit">Register</Link>
+            <Link onClick={()=> loginHandler()} to='/login'class="btn btn-dark"  type="submit">Login</Link>
+            <div style={{paddingRight: "20px"}}></div>
+            <Link to='/register' class="btn btn-dark" type="submit">Register</Link>
             </>
             
             )

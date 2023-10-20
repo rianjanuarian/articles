@@ -1,0 +1,69 @@
+:root {
+    --lilac: #845ec2;
+    --fuchsia: #d65db1;
+    --apricot: #ff9671;
+    --tangerine: #ffc75f;
+  }
+  
+  .bg-lilac {
+    background: var(--lilac);
+  }
+  
+  .bg-fuchsia {
+    background: var(--fuchsia);
+  }
+  
+  .bg-apricot {
+    background: var(--apricot);
+  }
+  
+  .bg-tangerine {
+    background: var(--tangerine);
+  }
+  
+  .move-4 {
+    animation-duration: 4s;
+  }
+  
+  .move-5 {
+    animation-duration: 5s;
+  }
+  
+  .move-6 {
+    animation-duration: 6s;
+  }
+  
+  .move-7 {
+    animation-duration: 7s;
+  }
+  
+  .move {
+    position: relative;
+    animation-name: move;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateY(0px);
+    }
+  
+    50% {
+      transform: translateY(20px);
+    }
+  
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .ms-n5 {
+    margin-left: -3rem;
+  }
+  
+  @media (max-width: 991px) {
+    .ms-n5 {
+      margin-left: 0;
+    }
+  }
+  
