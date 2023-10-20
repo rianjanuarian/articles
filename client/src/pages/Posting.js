@@ -110,7 +110,7 @@ const handleUpdate = (id)=>{
                     <div class="card-body">
                       <h5 class="card-title">{e.title}</h5>
                       <p class="card-text">{e.content}</p>
-                      <p class="card-text">{e.posting}</p>
+                 
                       <a onClick={()=> handleUpdate(e.id,1)} href="#" class="btn btn-primary">
                         Post
                       </a>
